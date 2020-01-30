@@ -1,0 +1,30 @@
+auth:
+  auth-memory:
+    users:
+      foo:
+        name: test
+        password: test
+
+store:
+  memory:
+    limit: 1000
+
+logs:
+  - {type: stdout, format: pretty-timestamped, level: http}
+
+packages:
+  '@uns/*':
+    access: $all
+    publish: $all
+    # unpublish: # same as publish
+  '**':
+    access: $all
+    publish: $authenticated
+    proxy: yarnpkg
+
+uplinks:
+  yarnpkg:
+    url: https://registry.yarnpkg.com
+  npmjs:
+    url: https://registry.npmjs.org/
+
