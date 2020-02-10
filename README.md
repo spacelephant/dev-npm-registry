@@ -13,7 +13,7 @@ $ yarn start
 
 ```shell
 $ yarn config set strict-ssl false
-$ yarn config set registry http://localhost:7000/
+$ yarn config set registry http://localhost:7000/ && npm config set registry http://localhost:7000/
 ```
 
 # Configuration
